@@ -1,6 +1,7 @@
 # codes
 important codes
-// red validation text in laravel =====================================
+=======================================================================
+// red validation text in laravel
 ---------------------------------
 
 @error('product_image')

@@ -100,6 +100,22 @@ important codes
 	@endforeach
     </select> 
     =====================
+  image load when image selected
+    ---------------------------
+    <img id="blah" width="250" height="250" />
+
+    <input type="file" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+    
+ anther image load when image selected
+ -----------------------------------
+     <input type="file" name="photo" class="form-control mb-2" id="image" onchange="loadfile(event)">
+     <script type="text/javascript">
+	function loadfile(event) {
+	var output=document.getElementById('preimage');
+	output.src=URL.createObjectURL(event.target.files[0]);
+	}
+	</script>
+========================================
     
     
     

@@ -84,9 +84,22 @@ important codes
 				})
 		};
 		</script>
-    ==========================
-    
-    
+    =========================
+   laravel old selected option value 
+   ------------------------
+   <select name="category_id" id="exampleInputEmail1" class="form-control">
+	<option value="">Select One</option>
+	@foreach ($allCategory as $item)
+	@if (old('category_id')==$item->id )
+    <option value="{{ $item->id }}" selected>{{ $item->category_name }}</option>
+	@else
+	<option value="{{ $item->id }}">{{ $item->category_name }}</option>
+
+	@endif
+
+	@endforeach
+    </select> 
+    =====================
     
     
     

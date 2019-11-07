@@ -1,6 +1,6 @@
 # codes
 important codes
-==================================
+=====================
 // red validation text in laravel
 ---------------------------------
 
@@ -10,10 +10,10 @@ important codes
   </span>
   @enderror
   
-  =========================================
+  ==================
   // red input field validation in laravel
   -----------------------------------------
   
   {{($errors->first('product_image') ? " form-error" : "")}}
   
- =========================================
+ ================

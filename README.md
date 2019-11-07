@@ -14,6 +14,12 @@ important codes
   // red input field validation in laravel
   -----------------------------------------
   
+  <style>
+    .form-error {
+        border: 2px solid #e74c3c;
+    }
+</style>
+  
   {{($errors->first('product_image') ? " form-error" : "")}}
   
  ================

@@ -37,53 +37,53 @@ important codes
    sweet confurm message in RAW PHP
      ----------------------
      <script>
-			function deleteuser(id, name){
-				var userid = id;
-				swal({
-				  title: 'Are you sure?',
-				  text: name +" will be deleted",
-				  type: 'warning',
-				  showCancelButton: true,			
-				  confirmButtonColor: '#3085d6',
-				  cancelButtonColor: '#d33',
-				  confirmButtonText: 'Yes, delete it!'
-				}).then((result) => {
-				  if (result.value) {
-				   	window.location = "delete_user.php?id="+userid
-				  }
-				})
+	function deleteuser(id, name){
+		var userid = id;
+		swal({
+		  title: 'Are you sure?',
+		  text: name +" will be deleted",
+		  type: 'warning',
+		  showCancelButton: true,			
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		  if (result.value) {
+			window.location = "delete_user.php?id="+userid
+		  }
+		})
 		};
-		</script>
+	</script>
     =========================
   sweet confurm and success message in RAW PHP
     -----------------------------
     <?php if (isset($_SESSION['deleteuser'])) { ?>			
-			<script>
-				swal("Deleted", "User Deleted Successful", "success");
-			</script>
-		<?php 
-			unset($_SESSION['deleteuser']);
-			}
-		 ?>
-
 		<script>
-			function deleteuser(id, name){
-				var userid = id;
-				swal({
-				  title: 'Are you sure?',
-				  text: name +" will be deleted",
-				  type: 'warning',
-				  showCancelButton: true,			
-				  confirmButtonColor: '#3085d6',
-				  cancelButtonColor: '#d33',
-				  confirmButtonText: 'Yes, delete it!'
-				}).then((result) => {
-				  if (result.value) {
-				   	window.location = "delete_user.php?id="+userid
-				  }
-				})
-		};
+			swal("Deleted", "User Deleted Successful", "success");
 		</script>
+	<?php 
+		unset($_SESSION['deleteuser']);
+		}
+	 ?>
+
+	<script>
+	function deleteuser(id, name){
+		var userid = id;
+		swal({
+		  title: 'Are you sure?',
+		  text: name +" will be deleted",
+		  type: 'warning',
+		  showCancelButton: true,			
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		  if (result.value) {
+			window.location = "delete_user.php?id="+userid
+		  }
+		})
+		};
+	</script>
     =========================
    laravel old selected option value 
    ------------------------
@@ -100,7 +100,7 @@ important codes
 	@endforeach
     </select> 
     =====================
-  image load when image selected
+  image load when image selected by tariq sir cit
     ---------------------------
     <img id="blah" width="250" height="250" />
 
@@ -109,6 +109,7 @@ important codes
  anther image load when image selected
  -----------------------------------
      <input type="file" name="photo" class="form-control mb-2" id="image" onchange="loadfile(event)">
+       <img src="" id="preimage" width="200" height="200" alt="">
      <script type="text/javascript">
 	function loadfile(event) {
 	var output=document.getElementById('preimage');

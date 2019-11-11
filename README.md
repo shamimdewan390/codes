@@ -21,6 +21,11 @@ important codes
 </style>
   
   {{($errors->first('product_image') ? " form-error" : "")}}
+  =============================
+  input field er nicher message er jnno
+  --------------------------------------------------------------
+   <ul><span style="color:red;">{!! $errors->first('alart_quantity') !!}</span></ul>
+   -------------------------------------------------------------
   
  ================
  sweet success message in RAW PHP

@@ -154,6 +154,49 @@ $(document).on("click", "#delete", function (e) {
 });
 
 });
+======================
+category wise sub-category
+------------------------
+    $(document).ready(function ()
+    {
+            $('select[name="category_id"]').on('change',function(){
+               var categoryId = $(this).val();
+               if(categoryId)
+               {
+                  $.ajax({
+                     url : 'ajax/category/' +categoryId,
+                     type : "GET",
+                     dataType : "json",
+                     success:function(data)
+                     {
+                        console.log(categoryId);
+                        $('select[name="subcategory_id"]').empty();
+                        $.each(data, function(key,value){
+                        $('select[name="subcategory_id"]').append('<option value="'+value.id+'">'+value.subcategory_name+'</option');
+                        });
+                     }
+                  });
+               }
+               else
+               {
+                  $('select[name="subcategory_id"]').empty();
+               }
+            });
+
+            $(function() {
+                $('#subdiv').hide();
+                $('select[name="category_id"]').change(function(){
+                    if($('select[name="category_id"]')) {
+                        $('#subdiv').hide();
+                        $('#subdiv').slideDown();
+                    } else {
+                        $('#subdiv').hide();
+                    }
+                });
+});
+});
+
+
     
     
     

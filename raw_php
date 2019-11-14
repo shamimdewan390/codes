@@ -90,10 +90,37 @@ $check_multi_id = array_filter($multi_id);
 		header('location:view-message.php');
 	}
 
-
-
-
-	
-
-
  ?>
+ =====================
+ checkbox er value dhore rakhar jonno
+ ---------------------
+ <?php if(isset($_SESSION['check'])) { foreach($_SESSION['check'] as $selected) { if($selected == "Python") { echo "checked=\"checked\""; break; }}} ?>
+ ===================
+ select er value dhore rakhar jonno
+ --------------------
+ <?php if(isset($_SESSION['select'])) { foreach($_SESSION['select'] as $selected2) { if($selected2 == "Expart") { echo "selected=\"selected\""; break; }}} ?>
+ ==============
+ update kora time e checkbox er value dorar jonno
+ ------------------------
+ <?php if (preg_match("/HTML/", $catch_user['skill'])) { echo "checked";} else {echo "";} ?>
+ =======================
+ update kora time e select er value dorar jonno
+ -------------------
+  <?php if (preg_match("/Expart/", $catch_user['position'])) { echo "selected";} else {echo "";} ?>
+  ====================
+  update korar time e image change korle sathe sathe show korar jonono
+  ---------------------
+  <div class="form-group">
+	<input type="file" name="photo"  id="image" onchange="loadfile(event)">
+	<img src="uploads/users./<?php echo $catch_user['photo'] ?>" alt="" id="preimage" width="200" height="200">
+</div>
+<script type="text/javascript">
+	function loadfile(event) {
+	var output=document.getElementById('preimage');
+	output.src=URL.createObjectURL(event.target.files[0]);
+	}
+</script>
+ ======================
+ input field type="text" rekhe tar moddhe min max and number use er jonno
+ -------------
+ onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14" minlength="11"

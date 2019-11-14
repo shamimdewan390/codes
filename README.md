@@ -196,6 +196,41 @@ category wise sub-category
 });
 });
 ===============================
+image upload in query builder
+------------------------------
+function storePost(Request $request){
+        $request->validate([
+            'post_title' => ['required'],
+            'post_details' => ['required'],
+            'category' => ['required'],
+             'post_image' => ['file','image','mimes:jpeg,png,jpg,gif,svg','max:2048']
+        ]);
+        $data = array();
+        $data['category_id']=$request->category;
+        $data['title']=$request->post_title;
+        $data['details'] =$request->post_details;
+        $image= $request->file('post_image');
+
+        if ($image) {
+            $image_name = hexdec(uniqid());
+            $ext = strtolower($image->getClientOriginalExtension());
+            $image_full_name = $image_name.'.'.$ext;
+            $upload_path = 'public/images/post/';
+            $image_url = $upload_path.$image_full_name;
+            $image->move($upload_path,$image_full_name);
+            $data['image']=$image_url;
+            DB::table('posts')->insert($data);
+            return back()->with('success', 'inser successfully');
+
+
+        } else {
+            DB::table('posts')->insert($data);
+            return back()->with('success', 'inser successfully');
+        }
+
+
+    }
+    ======================
 
 
     

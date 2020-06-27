@@ -1,0 +1,9 @@
+if ($request->type == 'image'){
+            $image_type = ['required','image', 'mimes:jpg,png,jpeg'];
+        }else {
+            $image_type = ['required'];
+        }
+        $request->validate([
+            'type' => 'required',
+            'image' => $image_type,
+        ]);

@@ -1,0 +1,39 @@
+<script>
+====================================
+only right button click disable
+====================================
+    document.oncontextmenu = disableRightClick;
+    function disableRightClick(event) {
+        event = event || window.event;
+
+        if (event.preventDefault()) {
+            event.preventDefault();
+        }else {
+            event.preventDefault = false;
+        }
+    }
+
+===========================================
+right button and keyboard shortcut disable
+===========================================
+
+    jQuery(window).on('keydown', function(e){
+        if ((e.keyCode == 123 && e.originalEvent && e.originalEvent.code == 'F12') ||
+            (e.keyCode == 73 && (e.ctrlKey || e.metaKey) && e.shiftKey) ||
+            (e.keyCode == 67 && (e.ctrlKey || e.metaKey) && e.shiftKey) ||
+            (e.keyCode == 75 && (e.ctrlKey || e.metaKey) && e.shiftKey) ||
+            (e.keyCode == 83 && (e.ctrlKey || e.metaKey) && e.shiftKey) ||
+            (e.keyCode == 81 && (e.ctrlKey || e.metaKey) && e.shiftKey) ||
+            (e.keyCode == 116 && e.shiftKey && e.originalEvent.code == 'F5') ||
+            (e.keyCode == 118 && e.shiftKey && e.originalEvent.code == 'F7') ||
+            ((e.ctrlKey || e.metaKey) && (e.keyCode == 88 || e.keyCode == 65
+                || e.keyCode == 67 || e.keyCode == 86 || e.keyCode == 83))) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    });
+    jQuery(document).off('contextmenu').on('contextmenu', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+    });
+</script>

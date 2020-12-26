@@ -14,3 +14,12 @@
   Order allow,deny
   Deny from all
 </Files>
+=================================
+mostafiz vai
+=================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On        
+  RewriteCond %{HTTPS} !=on    
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteRule ^(.*)$ public/ [L]
+</IfModule>

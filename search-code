@@ -1,0 +1,184 @@
+=====================
+search with suggest by word
+========================
+
+===============
+router
+===============
+Route::post('search','DemoController@search')->name('search');
+Route::post('search-suggest','DemoController@searchSuggest')->name('search-suggest');
+
+====================
+html codes
+====================
+<div class="container">
+        <div class="widget">
+            <!-- Search Widget Start -->
+            <div class="search--widget">
+                <form action="{{route('search',app()->getLocale())}}" method="post" data-form="validate" novalidate="novalidate">
+                    @csrf
+                    <div class="input-group">
+                        <input type="text" name="search" id="search" placeholder="Search..." class="form-control" required="" aria-required="true">
+
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <ul style="background: #F2F3F5;" class="header--menu-links nav navbar-nav" id="result">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="getSearchUrl" data-url="{{ route('search-suggest', app()->getLocale()) }}"></div>
+    
+    ================
+    javaScript codes
+    =================
+    <script>
+    $(document).ready(function () {
+        $('#search').keyup(function () {
+            var searchText = $(this).val();
+            var url = $("#getSearchUrl").data("url");
+
+
+
+            if (searchText !=''){
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    // dataType: "JSON",
+                    data:{query:searchText},
+                    success:function (res) {
+                        $("#result").html(res);
+                    }
+
+                });
+            }
+            else {
+                $("#result").html('');
+            }
+        });
+        $(document).on('click','a',function () {
+            $("#search").val($(this).text());
+            $("#result").html('');
+        });
+    })
+</script>
+
+==================
+metaphone keyword upload system (insert controller)
+===================
+$title = explode(" ",$request->title);
+        $mataphone='';
+       foreach ($title as $value){
+           $mataphone .= metaphone($value).' ';
+       }
+-------------
+$data->metaphone    = $mataphone." ".metaphone(Auth::user()->name);
+
+=================================
+search for suggest (search controller)
+===============================
+public function searchSuggest(Request $request){
+        $title = explode(" ",$_POST['query']);
+        $mataphone='';
+        foreach ($title as $value){
+            $mataphone .= metaphone($value).' ';
+        }
+
+        $searchValues = preg_split('/\s+/', $mataphone, -1, PREG_SPLIT_NO_EMPTY);
+        $users = Video::where(function ($q) use ($searchValues) {
+            foreach ($searchValues as $value) {
+                $q->orWhere('metaphone', 'like', "%{$value}%");
+            }
+        })->orderBy('title','desc')->get();
+
+        foreach ($users as $value){
+            echo "<li style='width: 100%'><a>".$value->title."</a></li>";
+        }
+
+//        $search = metaphone($_POST['query']);
+//
+//        $searchValues = preg_split('/\s+/', $search, 1, PREG_SPLIT_NO_EMPTY);
+//        $users = Video::where(function ($q) use ($searchValues) {
+//            foreach ($searchValues as $value) {
+//
+//                $q->orWhere('metaphone', 'like', "%{$value}%");
+//            }
+//        })->get();
+//
+//
+//        foreach ($users as $value){
+//            echo "<li style='width: 100%'><a>".$value->title."</a></li>";
+//        }
+
+
+    }
+    
+    ===================================
+   keyword search in title by metaphone keyword  (search controller)
+    ===================================
+public function search(Request $request){
+        
+
+        $title = explode(" ",$request->search);
+        $mataphone='';
+        foreach ($title as $value){
+            $mataphone .= metaphone($value).' ';
+        }
+//        echo $mataphone;
+
+        $searchValues = preg_split('/\s+/', $mataphone, -1, PREG_SPLIT_NO_EMPTY);
+        $users = Video::where(function ($q) use ($searchValues) {
+            foreach ($searchValues as $value) {
+                $q->orWhere('metaphone', 'like', "%{$value}%");
+            }
+        })->orderBy('hit','desc')
+            ->get();
+        return $users;
+
+
+        
+//        if ($mataphone<0){
+//            $searchValues = preg_split('/\s+/', $mataphone, -1, PREG_SPLIT_NO_EMPTY);
+//            $users = Video::where(function ($q) use ($searchValues) {
+//                foreach ($searchValues as $value) {
+//                    $q->orWhere('metaphone', 'like', "%{$value}%");
+//                }
+//            })->get();
+//
+//        return $users;
+//        }
+//        else{
+//            $searchbit = explode(" ",$request->search);
+//
+//            foreach ($searchbit as $value){
+//                $metaphnebit = metaphone($value);
+//
+//                $searchValues = preg_split('/\s+/', $metaphnebit, -1, PREG_SPLIT_NO_EMPTY);
+//                $users = Video::where(function ($q) use ($searchValues) {
+//                    foreach ($searchValues as $value) {
+//                        $q->orWhere('metaphone', 'like', "%{$value}%");
+//                    }
+//                })->get();
+//
+//                return $users;
+//
+//            }
+//        }
+
+
+//        $searchValues = preg_split('/\s+/', $string, -1, PREG_SPLIT_NO_EMPTY);
+//        $users = Video::where(function ($q) use ($searchValues) {
+//            foreach ($searchValues as $value) {
+//                $q->orWhere('metaphone', 'like', "%{$value}%");
+//            }
+//        })->get();
+//
+//
+//        return $users;
+
+    }
+    ===============================

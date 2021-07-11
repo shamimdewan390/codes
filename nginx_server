@@ -1,0 +1,47 @@
+server {
+
+
+	listen 80;
+	listen [::]:80;
+	
+	server_name ~^(www\.)?(?<sname>.+?).test$;
+
+	root /home/mahmudul/Code/$sname/public;
+
+
+	index index.php index.html index.htm;
+
+	charset utf-8;
+
+
+	location / {
+		try_files $uri $uri/ /index.php?$query_string;
+	}
+
+	location = /favicon.ico { access_log off; log_not_found off; }
+	location = /robots.txt { access_log off; log_not_found off; }
+
+
+	access_log /var/log/nginx/$sname-access.log;
+	error_log /var/log/nginx/wildcard-error.log debug;
+
+	error_page 404 /index.php;
+
+	sendfile off;
+
+
+
+	location ~ \.php {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+	}
+
+
+
+
+	location ~ /\.ht {
+		deny all;
+	}
+
+
+}

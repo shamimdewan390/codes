@@ -1,0 +1,18 @@
+        ==========================
+        https://github.com/pawlox/video-thumbnail
+        
+        ai package install kore controller e ai code dile video theke thumbnail ber korbe
+        =======================================
+        $rand = rand(10,100);
+        for($sum = 1; $sum <= 3; $sum++){
+            $interval = $sum * 3;
+
+            // shell_exec("$ffmpeg -i  $videoFile -an -ss $interval -s $size $rand.$sum.jpg");
+
+        // VideoThumbnail::createThumbnail($videoUrl, $storageUrl, $fileName, $second, $width = 640, $height = 480);
+        // VideoThumbnail::createThumbnail(public_path('files/movie.mp4'), public_path('files/thumbs/'), 'movie.jpg', 2, 1920, 1080);
+
+            VideoThumbnail::createThumbnail(public_path('ffmpeg/a.mp4'), public_path('ffmpeg/'), "$rand.$sum.jpg", $interval, 1920, 1080);
+        
+            echo "thumb create! $sum.jpg<br>";
+        }

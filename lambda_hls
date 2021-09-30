@@ -1,0 +1,61 @@
+var AWS = require('aws-sdk');
+var s3 = new AWS.S3({
+  apiVersion: '2012–09–25'
+});
+var eltr = new AWS.ElasticTranscoder({
+  apiVersion: '2012–09–25',
+  region: 'ap-southeast-1'
+});
+exports.handler = function(event, context) {
+  var bucket = event.Records[0].s3.bucket.name;
+  var key = event.Records[0].s3.object.key;
+  var pipelineId = '1632832788111-vsdh6o';
+ 
+  if (bucket !== 'newsrme') {
+    context.fail('Incorrect input bucket');
+    return;
+  }
+ 
+  var srcKey = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, " ")); // the object may have spaces  
+  var newKey = key.split('.')[0];
+  var fk= "400K";
+var sk= "600K";
+  var params = {
+    PipelineId: pipelineId,
+    OutputKeyPrefix: newKey + '/',
+    Input: {
+      Key: srcKey,
+      FrameRate: 'auto',
+      Resolution: 'auto',
+      AspectRatio: 'auto',
+      Interlaced: 'auto',
+      Container: 'auto'
+    },
+    Outputs: [
+{
+            Key: newKey + '/',
+            PresetId: "1351620000001-000020",
+            SegmentDuration: "10"
+        }
+],
+Playlists: [
+        {
+            Format: 'HLSv3',
+            Name: newKey,
+            OutputKeys: [
+                newKey + '/',
+            ]
+        },
+    ],
+  };
+ 
+  console.log('Starting a job');
+  eltr.createJob(params, function(err, data) {
+    if (err){
+      console.log(err);
+    } else {
+      console.log(data);
+    }
+    context.succeed('Job successfully completed');
+  });
+};

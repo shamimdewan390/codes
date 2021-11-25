@@ -1,0 +1,22 @@
+>>>>> instance storage used check
+------------------------------------
+df -h
+=====================================
+>>>>> 100M besi file log
+----------------------------------------
+razin abid = find / -type f -size +100M -exec ls -lh {} \; | awk '{ print $9 "|| Size : " $5 }'
+shovo =      find / -type f -name "*.log" -size +100M
+==============================================
+>>>>> video file delete korar jonno
+----------------------------------
+sudo rm -rf -d /tmp/*.mp4
+===========================================
+>>>>> larave server last 100 log check
+--------------------------------
+tail -fn 100 storage/logs/laravel.log
+================================
+
+
+
+
+

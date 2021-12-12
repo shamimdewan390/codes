@@ -1,0 +1,111 @@
+ssh keygenarate: 
+======================
+======================
+1. enter commend with github email, then enter enter more time,  documentation link below
+------------------------------------------------------
+ssh-keygen -t ed25519 -C "my_github_email@example.com"
+------------------------------------------------------
+doc = https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+key ber korar jonno user er root theke command
+-------------------------
+cat .ssh/id_ed25519.pub
+-------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2. server .pem file mode change korar jonno .pem file er location e terminal e
+----------------------------
+sudo chmod 400 filename.pem
+----------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+3. server e login korar jonno,
+--------------------------------------
+ssh -i newsrme.pem ubuntu@52.76.37.14
+--------------------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+user create, then enter and password, full name etc
+---------------------
+sudo adduser shamim
+---------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+change user mode, -aG = All group (read,write,executive)
+-----------------------------
+sudo usermod -aG sudo shamim
+-----------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ubuntu user theke shamim user e jawar jonno
+----------------
+su - shamim
+--------------------
+>>>>>>>>>>>>>>>>>>>>>>>
+server e shamim user e ssh key set korar system () and local computer theke ssh key ber korar system
+-------------------
+cat .ssh/id_ed25519.pub // local computre theke ssh key copy kore
+
+mkdir .ssh
+chmod 700 .ssh
+touch .ssh/authorized_keys
+vim .ssh/authorized_keys
+chmod 644 .ssh/authorized_keys
+----------------------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+PHP server project e install korte hobe
+---------------------------------
+sudo apt install php7.4-xml
+sudo apt install php7.4-curl
+sudo apt install php7.4-mbstring
+sudo apt install php7.4-zip unzip
+sudo composer install
+
+sudo chmod -R 777 storage
+sudo chmod -R 777 bootstrap/cache
+sudo php artisan storage:link
+sudo php artisan key:generate
+
+jodi problem hoe tahoel
+-------------------
+listen 443 ssl; // sites-available file e add korte hobe
+------------------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+zsh install and set
+-----------------------
+sudo apt install zsh
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+sudo vim .zshrc // file edit
+
+ZSH_THEME="bira"
+
+alias newsrme-shamim@live="ssh shamim@52.76.37.14" // sobar niche
+
+sourch .zshrc
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+some essential command
+----------------------
+sudo apt install git
+sudo apt install vim
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+SSL set my tareq sir
+--------------------
+sudo systemctl reload nginx
+sudo apt install certbot python3-certbon-nxinx
+sudo systemctl reload nginx
+sudo nginx -t
+sudo ufw status
+sudo ufw enable
+sudo ufw status
+sudo ufw allow ssh
+sudo ufw status
+cd /etc/nginx/sites-available
+ll
+sudo ufw allow 'Nginx Full'
+sudo ufw status
+sudo certbot --nginx -d domain.com -d www.domain.com
+sudo certbot renew --dry-run
+
+>>>>>>>>>>>>>>>>>>>>>>>
+all user list for server
+---------------------
+cat /etc/group | grep sudo

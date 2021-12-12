@@ -1,0 +1,59 @@
+git commands
+=============
+
+git add . (all new code staging karar jonno, mane git add hobe all code)
+
+git commit -m "ki ki kaj kora hoice tar details" (ja kicho add kora hoice ta akta name dia commmit kore rakhe... commit er akta code thake.. iccha korle oi commit e fire jawa jabe)
+
+git push / git push origin master (github e push kore rakhar jonno)
+
+git clone (full project namanor jonno)
+
+git pull (onno branch er code nijer branch e update korar jonno)
+
+git diff (work directory and staging area er moddhe parthokko, add korar pore ki ki kaj kora hoice ta daekhar jonno )
+
+git diff HEAD (work directory and local repository er moddhe parthokko, commit korar pore ki ki new code kora hoice ta dekhar jonno)
+
+git config --list (user name , email dekhar jonno)
+
+git log (all commit info dekhar jonno, akhane commit er code pawa jabe)
+
+git log --oneline (all commit sort e dehar jonno, akhane commit er code sort e pawa jabe)
+
+git checkout commit code (commit er j code deya hobe oi commit e fire jabe)
+
+git show commit code (oi commit e ki ki kaj hoice ta dekhar jonno)
+
+git diff commit code1 commit code2 (2 ta commit er moddhe parthokko dekhar jonno)
+
+git diff --staged (add korar pore new change dekhar jonno, mane git diff add koarar ager work directory and last commit er moddhe difference dekhae but ai code maddhome add korar pore parthokko dehae)
+
+gti branch branchName (branch create korar jonnoo)
+
+git branch (branch list dekhar jonno.. current branch e * mark thakbe)
+
+git checkout branchName (branch change/switch korar jonno, ak branch thkeeke onno branch e jawar jonno)
+
+
+git checkout -b branchName (branch create korar sathe sathe new branch e switch korar jono)
+
+git merge branchName (onno branch er code current branch e anar jonno)
+
+git branch -D branchName (branch delete korar jonno)
+
+git reset (back korar jonno, add kora code bad die ager jagae jawar jonno, mane add bad deyar jonno)
+
+git reset HEAD~ (commit korar pore ager jagae jawar jonno, ager jaga bolte jegula add korar hoicilo, mot kotha commit korar pore add and commit bad deyar jonno)
+
+git reset --hard (delete kora file o back kore, mane add bad die ager jagae back kore)
+
+
+git checkout .
+
+
+
+
+
+
+

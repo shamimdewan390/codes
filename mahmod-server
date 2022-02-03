@@ -48,6 +48,12 @@ vim .ssh/authorized_keys
 chmod 644 .ssh/authorized_keys
 ----------------------------------------
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+server e globally install korte hobe
+---------------------------------
+ngixn 
+php
+composer
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 PHP server project e install korte hobe
 ---------------------------------
 sudo apt install php7.4-xml

@@ -15,6 +15,16 @@ sudo rm -rf -d /tmp/*.mp4
 --------------------------------
 tail -fn 100 storage/logs/laravel.log
 ================================
+                case 'm4v':
+                case 'avi':
+                case 'mpg':
+                case 'mp4':
+                case 'mkv':
+                case 'webm':
+                case 'ogg':
+                case 'flv':
+                case 'mov':
+                case 'wmv':
 
 
 

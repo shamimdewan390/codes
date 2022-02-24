@@ -1,0 +1,1 @@
+/usr/local/bin/php /home/username/public_html/artisan queue:work

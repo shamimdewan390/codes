@@ -1,11 +1,11 @@
 $collection = [];
-            $title = $request->teach_title;
-            $descrition = $request->teach_description;
-            $organization = $request->organization;
+$title = $request->teach_title;
+$descrition = $request->teach_description;
+$organization = $request->organization;
 
-            foreach ($title as $key => $value) {
-                $collection[] = ['title' => $value, 'description' => $descrition[$key], 'organization'=>$organization[$key]];
-            }
+foreach ($title as $key => $value) {
+    $collection[] = ['title' => $value, 'description' => $descrition[$key], 'organization'=>$organization[$key]];
+}
 
-            $data->teach_experience = json_encode($collection);
-            $data->save();
+$data->teach_experience = json_encode($collection);
+$data->save();

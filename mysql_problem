@@ -1,0 +1,7 @@
+<html>
+<p>asdfasdf d</p>
+</html>
+---------------------------------------------------------
+ERROR: could not clear password forget password as apaparmor policy prevent this sender form sending this message to this recipien
+-----------------------------------------------------------
+=> sudo snap connect mysql-workbench-community:password-manager-service :password-manager-service

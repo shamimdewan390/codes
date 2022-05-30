@@ -13,7 +13,7 @@ install mysql
 
 optional
 --------------
-CREATE USER ‘shamim’@‘localhost' IDENTIFIED BY ‘1234’5678;
+CREATE USER 'shamim'@'localhost' IDENTIFIED BY '12345678';
 GRANT ALL PRIVILEGES ON *.* TO 'shamim'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EXIT;

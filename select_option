@@ -1,0 +1,9 @@
+==============================
+laravel selected old value (select option in dropdown)
+
+
+
+
+==============================
+laravel selected store value (select option in dropdown when data update)
+ <option {{ $item->type==$adminssionTest->type ? 'selected': '' }} value="{{$item->type}}">{{$item->type}}</option>

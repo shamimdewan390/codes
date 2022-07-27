@@ -53,7 +53,7 @@ $(document).ready(function () {
 </script>
 step 3
 =================
-
+@php
 $collection = [];
 $title = $request->teach_title;
 $descrition = $request->teach_description;
@@ -65,3 +65,4 @@ foreach ($title as $key => $value) {
 
 $data->teach_experience = json_encode($collection);
 $data->save();
+@endphp

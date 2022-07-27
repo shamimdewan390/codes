@@ -1,0 +1,88 @@
+step 1
+==============
+<button class="btn btn-danger delete_footer m-2"
+   value="{{ $footer->id }}"><i class="fas fa-trash"></i>
+</button>
+
+step 2
+==============
+<div class="modal fade" tabindex="-1" id="delete_footer_modal" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-default" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title text-center w-100">Delete Confirmation</h5>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="hidden_delete_footer_id">
+                    <h3 class="text-center">Are you sure to delete ?</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="delete_footer">Delete</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+step 3
+=================
+@section('delete_footer')
+    <script>
+        $(document).on('click','.delete_footer',function(){
+    var id = $(this).val();
+    $('input[name=hidden_delete_footer_id]').val(id);
+    $('#delete_footer_modal').modal('show');
+});
+
+// delete why choose uap
+$('#delete_footer').click(function(event){
+    event.preventDefault();
+    var id=$('input[name=hidden_delete_footer_id]').val();
+    console.log(id);
+    $.ajax({
+        method:'POST',
+        url:'/footer/'+id,
+        headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
+        data:{
+            id:id
+        },
+        success:function(data){
+            window.location = '/footer';
+            $('#delete_footer_modal').modal('hide');
+            toastr.success('FAQ deleted successfully !');
+        }
+    });
+});
+
+    </script>
+@endsection
+
+step 4
+=============
+
+Route::post('footer/{id}', [FooterController::class, 'destroy'])->middleware('isWebAdmin');
+
+step 5
+=============
+public function destroy($id)
+    {
+        $find_how_to_apply = Footer::findOrFail($id);
+        $find_how_to_apply->delete();
+        return Response::json($find_how_to_apply);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

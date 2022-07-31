@@ -1,0 +1,11 @@
+for delete
+==================
+sudo docker image prune
+
+docker images list
+===================
+sudo docker images
+
+docker off
+=================
+sudo docker-compose down

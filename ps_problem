@@ -1,0 +1,11 @@
+sudo -i -u postgres
+psql
+create database rendomdb;
+ALTER ROLE postgres WITH PASSWORD 'postgres';
+sudo systemctl restart postgresql
+systemctl status postgresql.service
+
+
+
+
+

@@ -11,3 +11,23 @@
             output.src=URL.createObjectURL(event.target.files[0]);
         }
     </script>
+    
+    
+    
+    
+    
+    
+    <video style="display: none; width: 220px" id="pre_video" class="pre_video" controls></video>
+    <img style="display: none;background: #c3c3c3;height: 180px;width: 180px"  id="pre_image" class="pre_image">
+
+<script>
+       const fileUrl = window.location.origin + "/"+response.header_banner;
+      console.log(fileUrl)
+          if (response.header_video_link=='image') {
+              $("#HeaderModelUpdate #pre_video").hide();  // hide video preview
+              $("#HeaderModelUpdate #pre_image").show().attr("src", fileUrl);
+          } else if(response.header_video_link=='video'){
+              $("#HeaderModelUpdate #pre_image").hide(); // hide image preview
+              $("#HeaderModelUpdate #pre_video").show().attr("src", fileUrl);
+          }
+</script>

@@ -2,9 +2,9 @@
 
 
 =================================================
-kono value div e rekhe ta jekono jagae use korar jonno
+html element e data rekhe ta jekono jagae use korar jonno
 =================================================
-
+########## 1
 <div data-percent=""></div>
 
 <script>
@@ -20,6 +20,60 @@ akhane use kora hoice (akhane value ta astece div theke)
         var value = $("div").data("percent");
     });
 </script>
+######### 2
+<a href="{{ url('view/customer/data') }}" data-id="{{ $show->id }}" id="view" class="btn btn-sm btn-success">View</a>
+------------------------------------
+data-id ta var id te rakha hoice
+-------------------------------------
+<script>
+$(document).on("click", "#view", function(e){
+		e.preventDefault();
+		var id = $(this).data("id");
+		var url = $(this).attr("href");
+
+		$.ajax({
+			url: url,
+			data: {id:id},
+			type: "GET",
+			dataType: "JSON",
+			success: function(response){
+				if($.isEmptyObject(response) != null){
+					$("#ViewCustomer").modal("show");
+					$("#customername").text(response.name + "'s Data");
+					$(".cname").text("Name: " + response.name);
+					$(".cphone").text("Phone: " + response.phone);
+					$(".cemail").text("Email: " + response.email);
+					$(".cdistrict").text("District: " + response.district);
+				}
+			}
+		});
+
+	});
+
+</script>
+
+########## 3
+
+<div id="getalldata" data-url="{{ url('get/customer/data') }}"></div>
+---------------------------------------
+data-url ta var url e use kora hoice
+---------------------------------------
+<script>
+function getCustomerData(){
+		var url = $("#getalldata").data("url");
+
+		$.ajax({
+			url: url, 
+			type: "get",
+			dataType: "HTMl",
+			success: function(response){
+				$("#showAllDataHere").html(response);
+			}	
+		})
+	}
+
+</script>
+
 
 =================================================
 dependency dropdown

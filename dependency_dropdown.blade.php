@@ -16,7 +16,7 @@ html element e data rekhe ta jekono jagae use korar jonno
 akhane use kora hoice (akhane value ta astece div theke)
 --------------------------------------------------------
 <script>
- $('#department').change(function() {
+ $('#section').change(function() {
         var value = $("div").data("percent");
     });
 </script>

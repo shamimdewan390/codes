@@ -18,3 +18,30 @@ laravel selected old value (select option in dropdown)
 ==============================
 laravel selected store value (select option in dropdown when data update)
  <option {{ $item->type==$adminssionTest->type ? 'selected': '' }} value="{{$item->type}}">{{$item->type}}</option>
+=========================================================
+
+Some Importent Code
+====================
+select option old value when insert 
+"''''''''''''''''''''
+<select class="form-control" name="category" id="category">
+ <option value="">Select Category</option>                        
+@foreach($categories as $category)                                   
+<option value="{{$category->slug}}"@if(old('category') == $category->slug) selected @endif>{{$category->category_name}}</option>                                              
+ @endforeach                                               
+</select>
+'''''''''''''''''''''
+
+select option old value when update
+"''''''''''''''''''''
+<select class="form-control" name="category" id="category">                      
+<option value="">Select Category</option>                      
+@foreach($categories as $category)                              
+<option value="{{$category->slug}}" {{old('category', $category->slug == $post->category_id ?'selected': '')}}
+{{--{!! old('category', $category->slug) == $post->category_id ? 'selected="selected"' : '' !!}--}}
+                                                                    >{{$category->category_name}}</option>                                                   
+@endforeach                                                  
+</select>
+'''''''''''''''''''''
+
+https://newsrme.s3-ap-southeast-1.amazonaws.com/frontend/audio/thumb_path/ac0c4355779239a759fed45e9f4d0a1a_newsrme-audio-thumbnail.jpg

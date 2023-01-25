@@ -1,0 +1,10 @@
+Step 0. sudo apt update
+Step 1. sudo apt install curl
+Step 2. curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+Step 3. source ~/ .bashrc        or         source ~/.nvm/nvm.sh
+Step 4. nvm install node
+Step 5. nvm ls
+Step 6. nvm ls-remote
+Step 7. nvm install 16.8.3
+Step 8. nvm use version like 16
+Step 9. nvm run default --verion

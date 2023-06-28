@@ -46,3 +46,6 @@ zsh-syntax-highlighting
 ```
 #699DF0
 ```
+# some link
+https://github.com/zsh-users/zsh-syntax-highlighting/issues/918
+

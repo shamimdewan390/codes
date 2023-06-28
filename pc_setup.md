@@ -1,2 +1,4 @@
 ## ubuntu pc setup 
-f
+
+### step - 1
+terminal setup

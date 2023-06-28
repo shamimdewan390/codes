@@ -86,6 +86,11 @@ alias newsrme-shamim@live="ssh shamim@52.76.37.14" // sobar niche
 
 sourch .zshrc
 
+sourch jodi kaj na kre
+-----------------------
+sudo vim ~/.bashrc
+exec zsh
+
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 some essential command
 ----------------------

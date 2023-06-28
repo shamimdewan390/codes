@@ -9,7 +9,7 @@ install mysql
 => ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'insert_password';
 => FLUSH PRIVILEGES;
 
-=> sudo -u root -p
+=> sudo mysql -u root -p
 
 optional
 --------------

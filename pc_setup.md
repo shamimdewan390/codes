@@ -22,9 +22,12 @@ sourch .zshrc
 
 sourch jodi kaj na kre
 -----------------------
+```
 sudo vim ~/.bashrc
+```
+```
 exec zsh
-
+```
 ### Autosuggestions and Syntax highlighting
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -38,4 +41,8 @@ plugins=(git
 zsh-autosuggestions
 zsh-syntax-highlighting
 )
+```
+# terminal color code 
+```
+#699DF0
 ```

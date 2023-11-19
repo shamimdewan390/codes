@@ -3,7 +3,7 @@ ssh keygenarate:
 ======================
 1. enter commend with github email, then enter enter more time,  documentation link below
 ------------------------------------------------------
-ssh-keygen -t ed25519 -C "my_github_email@example.com"
+ssh-keygen -t ed25519 -C "shamimdewan343@gmail.com"
 ------------------------------------------------------
 doc = https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

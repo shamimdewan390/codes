@@ -44,7 +44,10 @@ zsh-syntax-highlighting
 ```
 # terminal color code 
 ```
+taxt
 #699DF0
+bg
+#2E3436
 ```
 # some link
 https://github.com/zsh-users/zsh-syntax-highlighting/issues/918

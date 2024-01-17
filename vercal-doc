@@ -1,0 +1,5 @@
+1. install globally
+```npm i -g vercel```
+2. run ```vercel``` and follow the instraction
+3. check vercal accout
+4. run ```vercal prod```

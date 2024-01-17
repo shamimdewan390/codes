@@ -8,3 +8,10 @@ graphQL
 alignment
 ES7 React/Redux/GraphQL/React-Native snippets
 Code Spell Checker
+mdx
+-------------------
+setting->setting json -> paste
+"files.associations": {
+        "*.mdx": "markdown"
+    },
+-----------------------------

@@ -101,11 +101,12 @@ sudo mv composer.phar /usr/bin/composer
 
 ```
 sudo mysql
-CREATE DATABASE pickbazar;
 
-CREATE USER 'pickbazar_user'@'%' IDENTIFIED WITH mysql_native_password BY 'pickbazar1';
+CREATE DATABASE localhost;
 
-GRANT ALL ON pickbazar.* TO 'pickbazar_user'@'%';
+CREATE USER 'localhost_user'@'%' IDENTIFIED WITH mysql_native_password BY '12345678';
+
+GRANT ALL ON localhost.* TO 'localhost_user'@'%';
 
 FLUSH PRIVILEGES;
 ```

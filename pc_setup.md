@@ -51,4 +51,80 @@ bg
 ```
 # some link
 https://github.com/zsh-users/zsh-syntax-highlighting/issues/918
+```
+sudo apt install zip unzip git vim curl
+```
+# Install Nginx
+
+```
+sudo apt update
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install nginx
+sudo ufw app list
+sudo ufw allow ssh
+sudo ufw allow OpenSSH
+sudo ufw allow 'Nginx HTTP'
+sudo ufw enable
+sudo ufw default deny
+sudo ufw status
+systemctl status nginx
+```
+
+# Install MYSQL
+
+```
+sudo apt install mysql-server
+```
+
+# Install PHP
+```
+sudo apt install php8.1-fpm php8.1-mysql
+```
+```
+sudo apt install php8.1-mbstring php8.1-xml php8.1-bcmath php8.1-simplexml php8.1-intl php8.1-gd php8.1-curl php8.1-zip php8.1-gmp
+```
+
+# Install composer
+
+```
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+```
+sudo mv composer.phar /usr/bin/composer
+```
+
+# Install mysql
+
+```
+sudo mysql
+CREATE DATABASE pickbazar;
+
+CREATE USER 'pickbazar_user'@'%' IDENTIFIED WITH mysql_native_password BY 'pickbazar1';
+
+GRANT ALL ON pickbazar.* TO 'pickbazar_user'@'%';
+
+FLUSH PRIVILEGES;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

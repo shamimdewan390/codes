@@ -48,6 +48,7 @@ taxt
 #699DF0
 bg
 #2E3436
+30/110
 ```
 # some link
 https://github.com/zsh-users/zsh-syntax-highlighting/issues/918

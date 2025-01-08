@@ -111,7 +111,10 @@ GRANT ALL ON localhost.* TO 'localhost_user'@'%';
 
 FLUSH PRIVILEGES;
 ```
-
+# Install tableplus
+```
+https://tableplus.com/blog/2019/10/tableplus-linux-installation.html
+```
 
 
 

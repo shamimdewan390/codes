@@ -116,10 +116,19 @@ FLUSH PRIVILEGES;
 https://tableplus.com/blog/2019/10/tableplus-linux-installation.html
 ```
 
+# ssh keygenarate: 
 
 
-
-
+======================
+======================
+1. enter commend with github email, then enter enter more time,  documentation link below
+```
+ssh-keygen -t ed25519 -C "shamimdewan343@gmail.com"
+```
+visit:
+```
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+```
 
 
 

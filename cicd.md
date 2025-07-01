@@ -1,6 +1,6 @@
-# step -1
+# Step -1
 
-> create a file
+> Create a file
 
 ```
 your-project/

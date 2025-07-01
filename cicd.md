@@ -127,7 +127,7 @@ ssh-keygen -t ed25519 -C "shamimdewan343@gmail.com"
 mkdir -p ~/.ssh
 nano ~/.ssh/authorized_keys
 ```
-> Paste contents of id_ed25519.pub into the authorized_keys file and save (CTRL+O, Enter, then CTRL+X).
+> Paste contents of your local mechine's id_ed25519.pub into the server authorized_keys file and save (CTRL+O, Enter, then CTRL+X).
 NOTE: If any key alrady existe then paste new line like this:
 
 ```

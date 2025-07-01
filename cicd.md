@@ -44,6 +44,14 @@ jobs:
 
 ```
 
+> If first time you want to clone repository then you can update this line:
+
+```
+script: |
+  git clone git@github.com:yourusername/your-repo.git /var/www/cicd
+```
+
+
 ## Your need to change or setup
  1. host
  2. username
@@ -154,7 +162,16 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAyz7oBfpbV+/Tr8iQ8zQ5u shamimdewan343@gmail.com
  2.  paste your server id_ed25519.pub id and Title
 
 
+# Step - 6
 
+## Now your CICD is ready. you can push or merge your selected branch 
+
+# Possible Error
+
+> 
+```
+sudo chown -R $USER:$USER /var/www/
+```
 
 
 

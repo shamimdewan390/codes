@@ -1,6 +1,7 @@
 # step -1
 
-> create a file 
+> create a file
+
 ```
 your-project/
 ├── .github/
@@ -8,9 +9,11 @@ your-project/
 │       └── main.yml (or any-name.yml)
 
 ```
+
 > Paste below code in main.yml file
 
-## this is for EC2
+## This is for EC2
+
 ```
 name: Deploy to EC2
 
@@ -40,13 +43,14 @@ jobs:
             ./main_deplyer.sh
 
 ```
+
 ## Your need to change or setup
  1. host
  2. username
  3. key
  4. project directory
- 5. 
-## create main_deployer.sh (or any-name.sh)
+    
+## Create main_deployer.sh (or any-name.sh)
 
 > Paste below code in main.yml file
 
@@ -74,7 +78,7 @@ chmod -R 777 storage
 
 ```
 
-## run php command you want to run
+## Run php command you want to run
 
 
 

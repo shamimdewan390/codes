@@ -128,7 +128,7 @@ mkdir -p ~/.ssh
 nano ~/.ssh/authorized_keys
 ```
 > Paste contents of your local mechine's id_ed25519.pub into the server authorized_keys file and save (CTRL+O, Enter, then CTRL+X).
-NOTE: If any key alrady existe then paste new line like this:
+> NOTE: If any key alrady existe then paste new line like this:
 
 ```
 ssh-rsa AAAAB3... yourname@example.com
@@ -141,7 +141,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAyz7oBfpbV+/Tr8iQ8zQ5u shamimdewan343@gmail.com
 
   1. Go to your GitHub repo → Settings → Secrets and variables → Actions.
   2. Click New repository secret.
-  3. Name it SSH_PRIVATE_KEY.
+  3. Name it ```SSH_PRIVATE_KEY```.
   4. Paste the contents of id_ed25519 (private key, not the .pub) as value.
 
 

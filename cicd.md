@@ -85,6 +85,7 @@ chmod -R 777 storage
 ## If not generate ssh key in you local mechine then: 
 
 > Generate SSH Key for GitHub Actions (on your local machine)
+
 Run this in your terminal:
 
 ```
@@ -111,8 +112,46 @@ AAAEDnJVibfVquqn043rAMzLpmAVw4KfpF4CIhnzSDnW81RIKHT8oVLVxh03J
      ```
 
 
+# Step - 3
+## Add Public Key to EC2 (your server)
+
+Run this in your terminal:
+
+```
+ssh-keygen -t ed25519 -C "shamimdewan343@gmail.com"
+```
+
+> On the server, run:
+
+```
+mkdir -p ~/.ssh
+nano ~/.ssh/authorized_keys
+```
+> Paste contents of id_ed25519.pub into the authorized_keys file and save (CTRL+O, Enter, then CTRL+X).
+NOTE: If any key alrady existe then paste new line like this:
+
+```
+ssh-rsa AAAAB3... yourname@example.com
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAyz7oBfpbV+/Tr8iQ8zQ5u shamimdewan343@gmail.com
+```
+
+# Step - 4
+
+## Add Private Key to GitHub Secrets
+
+  1. Go to your GitHub repo → Settings → Secrets and variables → Actions.
+  2. Click New repository secret.
+  3. Name it SSH_PRIVATE_KEY.
+  4. Paste the contents of id_ed25519 (private key, not the .pub) as value.
 
 
+
+# Step - 5
+
+## Add Server public Key to GitHub 
+
+ 1.  Go to your GitHub  → Settings → SSH AND GPG Keys → New SSH Key.
+ 2.  paste your server id_ed25519.pub id and Title
 
 
 

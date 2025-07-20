@@ -103,7 +103,8 @@ ssh-keygen -t ed25519 -C "shamimdewan343@gmail.com"
 > It will generate:
   1. id_ed25519 (private)
      like this:
-  
+
+  ```
 -----BEGIN OPENSSH PRIVATE KEY-----
      
 b3BlbnNzaCXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAABAAAAMwAAAAtzc2gtZW
@@ -113,7 +114,7 @@ AAAEDnJVibfVquqn043rAMzLpmAVw4KfpF4CIhnzSDnW81RIKHT8oVLVxh03J
 87q4RBeZ9+CX3jXggckLAAAAGHNoYW1pbWRld2FuMzGdtYWlsLmNvbQECAwQF
 
 -----END OPENSSH PRIVATE KEY-----
-
+```
   
   3. id_ed25519.pub (public)
      like this:

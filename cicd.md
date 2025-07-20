@@ -106,18 +106,17 @@ ssh-keygen -t ed25519 -C "shamimdewan343@gmail.com"
 
   ```
 -----BEGIN OPENSSH PRIVATE KEY-----
-     
 b3BlbnNzaCXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAABAAAAMwAAAAtzc2gtZW
 QyNTUxOQAAACB80g51vNUSCh0/KFS1cYdNyfO6uEQXmffgl9414IHJCwAAAKDzq50A86ud
 AAAAAAtzc2gtZxOQAAAXmffgl9414IHJCw
 AAAEDnJVibfVquqn043rAMzLpmAVw4KfpF4CIhnzSDnW81RIKHT8oVLVxh03J
 87q4RBeZ9+CX3jXggckLAAAAGHNoYW1pbWRld2FuMzGdtYWlsLmNvbQECAwQF
-
 -----END OPENSSH PRIVATE KEY-----
 ```
   
   3. id_ed25519.pub (public)
      like this:
+     
      ```
      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzSDnW81RIKHT8oVLVxh03J87q4RBeZ9+CX3jXggckL shamimdewan343@gmail.com
      ```
